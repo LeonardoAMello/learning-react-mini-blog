@@ -1,0 +1,34 @@
+nav {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    height: 70px;
+    background-color: #353535;
+    align-items: center;
+}
+
+nav a {
+    margin: 0 10px;
+    padding: 5px;
+
+    text-decoration: none;
+    color: #AAA
+}
+
+nav a:hover {
+    color: #CCC;
+}
+
+.brand {
+    padding: 0.5em 2em;
+    font-size: 1.2em;
+}
+
+.brand span {
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.links_list {
+    padding: 0.5em 2em;
+}
