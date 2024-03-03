@@ -40,3 +40,8 @@
 .read-the-docs {
   color: #888;
 }
+
+.container {
+  min-height: 60vh;
+  margin-bottom: 5em;
+}

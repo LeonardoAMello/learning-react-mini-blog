@@ -1,10 +1,13 @@
+// Routing
+import { Outlet } from "react-router-dom";
+
 // CSS
 import "./App.css";
 
 function App() {
   return (
-    <div>
-      <h1>Hello World</h1>
+    <div className="wrapper">
+      <Outlet />
     </div>
   );
 }
