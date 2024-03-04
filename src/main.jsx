@@ -17,6 +17,8 @@ import Home from "./routes/Home/Home";
 import EditPost from "./routes/EditPost/EditPost";
 import Dashboard from "./routes/Dashboard/Dashboard";
 import About from "./routes/About/About";
+import Login from "./routes/Login/Login";
+import Register from "./routes/Register/Register";
 
 // Routing
 const router = createBrowserRouter([
@@ -44,6 +46,14 @@ const router = createBrowserRouter([
       {
         path: "/about",
         element: <About />,
+      },
+      {
+        path: "/login",
+        element: <Login />,
+      },
+      {
+        path: "/register",
+        element: <Register />,
       },
     ],
   },
