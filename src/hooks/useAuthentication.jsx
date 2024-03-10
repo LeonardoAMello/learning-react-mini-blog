@@ -52,6 +52,21 @@ export const useAuthentication = () => {
     }
   };
 
+  const login = async (data) => {
+    checkIfIsCancelled();
+
+    setLoading(true);
+    setError(false);
+
+    try {
+      await signInWithEmailAndPassword(auth, data.email, data.password);
+    } catch (error) {
+      console.error(error.message);
+      setError(error.message);
+      setLoading(false);
+    }
+  };
+
   const logout = () => {
     checkIfIsCancelled();
     signOut(auth);
@@ -64,8 +79,9 @@ export const useAuthentication = () => {
   return {
     auth,
     createUser,
+    login,
+    logout,
     error,
     loading,
-    logout,
   };
 };
