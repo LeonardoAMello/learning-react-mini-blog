@@ -1,5 +1,5 @@
 // React
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 // Routing
 import { useNavigate } from "react-router-dom";
@@ -11,23 +11,44 @@ import { useAuthValue } from "../../context/AuthContext";
 import { useInsertDocument } from "../../hooks/useInsertDocument";
 
 // CSS
-import styles from "./EditPost.module.css";
+import styles from "./NewPost.module.css";
 
-const EditPost = () => {
+const NewPost = () => {
   const [title, setTitle] = useState("");
   const [image, setImage] = useState("");
   const [body, setBody] = useState("");
-  const [tags, setTags] = useState([]);
+  const [tags, setTags] = useState("");
+  const [formError, setFormError] = useState("");
 
   const { user } = useAuthValue();
   const { insertDocument, response } = useInsertDocument("posts");
 
+  const navigate = useNavigate();
+
   const handleSubmit = async (e) => {
     e.preventDefault();
 
+    setFormError("");
+
     // Validate URL image
+    try {
+      new URL(image);
+    } catch (error) {
+      setFormError("URL da imagem inválida");
+      return;
+    }
 
     // Create tags array
+    const tagsArray = tags
+      .split(",")
+      .map((tag) => tag.trim().toLowerCase())
+      .filter((tag) => tag.length > 0);
+
+    // Check values
+    if (!title || !image || !tags || !body) {
+      setFormError("Preencha todos os campos");
+      return;
+    }
 
     // Save data
     await insertDocument({
@@ -36,11 +57,18 @@ const EditPost = () => {
       title,
       image,
       body,
-      tags,
+      tagsArray,
     });
 
     // Redirect to home page
+    navigate("/");
   };
+
+  useEffect(() => {
+    if (response.error && !formError) {
+      setFormError(response.error);
+    }
+  }, [response.error]);
 
   return (
     <div>
@@ -91,10 +119,10 @@ const EditPost = () => {
           />
         </label>
         <button disabled={response.loading}>Postar</button>
-        {response.error && <p className="error">{response.error}</p>}
+        {formError && <p className="error">{formError}</p>}
       </form>
     </div>
   );
 };
 
-export default EditPost;
+export default NewPost;

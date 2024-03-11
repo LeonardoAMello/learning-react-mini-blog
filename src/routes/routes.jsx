@@ -1,6 +1,6 @@
 // Routes
 import Home from "./Home/Home";
-import EditPost from "./EditPost/EditPost";
+import NewPost from "./NewPost/NewPost";
 import Dashboard from "./Dashboard/Dashboard";
 import About from "./About/About";
 import Login from "./Login/Login";
@@ -17,7 +17,7 @@ export const routes = [
   },
   {
     path: "/new-post",
-    element: <PrivateRoute element={<EditPost />} />,
+    element: <PrivateRoute element={<NewPost />} />,
   },
   {
     path: "/dashboard",
@@ -25,7 +25,7 @@ export const routes = [
   },
   {
     path: "/edit-post/:id",
-    element: <PrivateRoute element={<EditPost />} />,
+    element: <PrivateRoute element={<NewPost />} />,
   },
   {
     path: "/about",
