@@ -1,0 +1,43 @@
+.post_detail img {
+    width: 30vw;
+    height: 30vw;
+}
+
+.post_detail h2 {
+    margin-bottom: .4em;
+}
+
+.post_detail .tags {
+    margin-bottom: 1.2em;
+    display: flex;
+}
+
+.tags p {
+    margin-right: .5em;
+    color: #AAA;
+}
+
+.tags span {
+    font-weight: bold;
+}
+
+.created_by {
+    margin-bottom: 1em;
+}
+
+.created_at {
+    color: #AAA;
+}
+
+.post_header {
+    text-align: left;
+    margin-bottom: 1em;
+}
+
+.post_header div {
+    display: inline;
+}
+
+.post_details {
+    text-align: left;
+}
