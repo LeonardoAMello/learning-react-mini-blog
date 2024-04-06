@@ -1,0 +1,37 @@
+.noposts {
+    text-align: center;
+}
+
+.noposts p {
+    margin-bottom: 1.5em;
+}
+
+.noposts a {
+    padding: 10px 25px;
+
+    text-decoration: none;
+    color: #AAA
+}
+
+.noposts a:hover {
+    color: #CCC;
+}
+
+.posts_list {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+a {
+    margin: 0 10px;
+    padding: 5px;
+
+    text-decoration: none;
+    color: #AAA
+}
+
+a:hover {
+    color: #CCC;
+}

@@ -8,7 +8,7 @@ import { useNavigate, Link } from "react-router-dom";
 import { useFetchDocuments } from "../../hooks/useFetchDocuments";
 
 // Components
-import PostItems from "../../components/PostItem";
+import PostItem from "../../components/PostItem";
 
 // CSS
 import styles from "./Home.module.css";
@@ -17,8 +17,14 @@ const Home = () => {
   const [query, setQuery] = useState("");
   const { documents: posts, loading } = useFetchDocuments("posts");
 
+  const navigate = useNavigate();
+
   const handleSubmit = (e) => {
     e.preventDefault();
+
+    if (query) {
+      return navigate(`/search?q=${query}`);
+    }
   };
 
   return (
@@ -34,7 +40,7 @@ const Home = () => {
       </form>
       <div className={styles.posts_list}>
         {loading && <p>Carregando...</p>}
-        {posts && posts.map((post) => <PostItems key={post.id} post={post} />)}
+        {posts && posts.map((post) => <PostItem key={post.id} post={post} />)}
         {posts && posts.length === 0 && (
           <div className={styles.noposts}>
             <p>Não foram encontrados posts</p>
