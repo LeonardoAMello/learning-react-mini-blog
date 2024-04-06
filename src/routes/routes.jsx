@@ -1,6 +1,7 @@
 // Routes
 import Home from "./Home/Home";
 import Search from "./Search/Search";
+import Post from "./Post/Post";
 import NewPost from "./NewPost/NewPost";
 import Dashboard from "./Dashboard/Dashboard";
 import About from "./About/About";
@@ -19,6 +20,10 @@ export const routes = [
   {
     path: "/search",
     element: <Search />,
+  },
+  {
+    path: "/posts/:id",
+    element: <Post />,
   },
   {
     path: "/new-post",

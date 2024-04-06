@@ -8,7 +8,7 @@ import { useNavigate, Link } from "react-router-dom";
 import { useFetchDocuments } from "../../hooks/useFetchDocuments";
 
 // Components
-import PostItem from "../../components/PostItem";
+import PostItem from "../../components/PostItem/PostItem";
 
 // CSS
 import styles from "./Home.module.css";

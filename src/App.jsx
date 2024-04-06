@@ -2,8 +2,8 @@
 import { Outlet } from "react-router-dom";
 
 // Components
-import Navbar from "./components/Navbar";
-import Footer from "./components/Footer";
+import Navbar from "./components/Navbar/Navbar";
+import Footer from "./components/Footer/Footer";
 
 // Context
 import { AuthProvider } from "./context/AuthContext";

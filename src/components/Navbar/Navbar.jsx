@@ -2,10 +2,10 @@
 import { Link } from "react-router-dom";
 
 // Hooks
-import { useAuthentication } from "../hooks/useAuthentication";
+import { useAuthentication } from "../../hooks/useAuthentication";
 
 // Context
-import { useAuthValue } from "../context/AuthContext";
+import { useAuthValue } from "../../context/AuthContext";
 
 // CSS
 import styles from "./Navbar.module.css";

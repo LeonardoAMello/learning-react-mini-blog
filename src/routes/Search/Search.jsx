@@ -6,7 +6,7 @@ import { useFetchDocuments } from "../../hooks/useFetchDocuments";
 import { useQuery } from "../../hooks/useQuery";
 
 // Components
-import PostItem from "../../components/PostItem";
+import PostItem from "../../components/PostItem/PostItem";
 
 // CSS
 import styles from "./Search.module.css";

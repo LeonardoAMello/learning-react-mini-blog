@@ -31,7 +31,12 @@ const PostItem = ({ post }) => {
         <div className={styles.created_by}>{post.createdBy}</div>
         <div className={styles.created_at}> • {elapsedTime}</div>
       </div>
-      <img src={post.image} alt={post.title} />
+      <div className={styles.img_container}>
+        <img src={post.image} alt={post.title} />
+        <Link className={styles.view_post} to={`/posts/${post.id}`}>
+          Ler post
+        </Link>
+      </div>
       <div className={styles.post_details}>
         <h2>{post.title}</h2>
         <p>{post.body}</p>
@@ -44,7 +49,6 @@ const PostItem = ({ post }) => {
           ))}
         </div>
       </div>
-      <Link to={`/posts/${post.id}`}></Link>
     </div>
   );
 };
