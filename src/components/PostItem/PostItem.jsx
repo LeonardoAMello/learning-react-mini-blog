@@ -23,7 +23,9 @@ const PostItem = ({ post }) => {
     }
   }
 
-  const elapsedTime = calculateElapsedTime(post.createdAt.seconds);
+  const elapsedTime = post.updatedAt
+    ? "atualizado à " + calculateElapsedTime(post.updatedAt.seconds)
+    : calculateElapsedTime(post.createdAt.seconds);
 
   return (
     <div className={styles.post_detail}>
