@@ -96,6 +96,8 @@ const NewPost = () => {
             onChange={(e) => setImage(e.target.value)}
             value={image}
           />
+          <span>Preview da image</span>
+          <img src={image} alt={title}></img>
         </label>
         <label>
           <span>Conteúdo:</span>

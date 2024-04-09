@@ -3,6 +3,7 @@ import Home from "./Home/Home";
 import Search from "./Search/Search";
 import Post from "./Post/Post";
 import NewPost from "./NewPost/NewPost";
+import EditPost from "./EditPost/EditPost";
 import Dashboard from "./Dashboard/Dashboard";
 import About from "./About/About";
 import Login from "./Login/Login";
@@ -30,12 +31,12 @@ export const routes = [
     element: <PrivateRoute element={<NewPost />} />,
   },
   {
-    path: "/dashboard",
-    element: <PrivateRoute element={<Dashboard />} />,
+    path: "/edit-post/:id",
+    element: <PrivateRoute element={<EditPost />} />,
   },
   {
-    path: "/edit-post/:id",
-    element: <PrivateRoute element={<NewPost />} />,
+    path: "/dashboard",
+    element: <PrivateRoute element={<Dashboard />} />,
   },
   {
     path: "/about",
